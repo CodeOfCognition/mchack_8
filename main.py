@@ -9,6 +9,7 @@ mongo_client = MongoClient()
 db = mongo_client.db
 entries = db.entries
 worksheets = db.worksheets
+moods = db.moods
 
 class Mood(Enum):
 	VERY_BAD = 0
@@ -16,6 +17,12 @@ class Mood(Enum):
 	NEUTRAL = 2
 	GOOD = 3
 	VERY_GOOD = 4
+
+	def _send_to_mongo(mood):
+		post = {"date": datetime.datetime.utcnow(),
+			"mood": mood.value}
+		moods.insert_one(post)
+
 
 class CDC(Enum):
 	# TODO replace me with actual CDC options
@@ -25,21 +32,21 @@ class CDC(Enum):
 	CDC_OPT_3 = 3
 
 class Journal:
-	def __init__(self, entry, mood, upload=True):
+	def __init__(self, entry, upload=True):
 		self.journal = entry
-		self.mood = mood
+		#self.mood = mood
 		if upload:
 			self._send_to_mongo()
 
 	def _send_to_mongo(self):
 		post = {"date": datetime.datetime.utcnow(),
-			"journal": self.journal,
-			"mood": self.mood.value}
+			"journal": self.journal}
+			#"mood": self.mood.value}
 		entries.insert_one(post)
 
 class Worksheet:
-	def __init__(self, entry, mood, cdc, entry1, entry2, upload=True):
-		self.mood = mood
+	def __init__(self, entry, cdc, entry1, entry2, upload=True):
+		#self.mood = mood
 		self.cdc = cdc
 		self.entry = entry
 		# TODO rename entry1, entry2
@@ -53,8 +60,8 @@ class Worksheet:
 			"entry": self.entry,
 			"entry1": self.entry1,
 			"entry2": self.entry2,
-			"cdc": self.cdc.value,
-			"mood": self.mood.value}
+			"cdc": self.cdc.value}
+			#"mood": self.mood.value}
 		worksheets.insert_one(post);
 
 def journals_get_all():
@@ -64,6 +71,10 @@ def journals_get_all():
 def worksheets_get_all():
 	all_worksheets = [x for x in worksheets.find()]
 	return all_worksheets
+
+def moods_get_all():
+	all_moods = [x for x in moods.find()]
+	return all_moods
 
 @app.route("/", methods=['POST', 'GET'])
 def index():
