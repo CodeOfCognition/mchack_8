@@ -97,7 +97,7 @@ def moods_get_all():
 @app.route("/Mood/<mood_id>", methods=['POST', 'GET'])
 def mood(mood_id):
 	Mood._send_to_mongo(Mood(int(mood_id)))
-	return mood_id #redirect('/')
+	return redirect('/')
 
 @app.route("/", methods=['POST', 'GET'])
 def index():
@@ -157,6 +157,7 @@ def journal_mood_x(page_id):
 		entry = request.form['message']
 		mood = Mood(int(page_id))
 		Journal(entry, mood)
+		return redirect('/')
 	return redirect('/')
 
 @app.route("/worksheet", methods=['POST', 'GET'])
