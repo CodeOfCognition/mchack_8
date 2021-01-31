@@ -150,10 +150,12 @@ def analytics_page():
 		matplotlib.pyplot.xlabel("Time")
 		matplotlib.pyplot.savefig("./static/mood-graph.png")
 
-		# TODO how will we display this? templates?
-		all_journals = sorted(journals_get_all(), key=lambda j: j['date'])
-		all_worksheets = sorted(worksheets_get_all(), key=lambda w: w['date'])
-		return render_template("analytics.html")
+		all_journals = sorted(journals_get_all(), key=lambda j: j['date'], reverse=True)
+		for e in all_journals:
+			e['date'] = e['date'].strftime("%c")
+		# display worksheets?
+		#all_worksheets = sorted(worksheets_get_all(), key=lambda w: w['date'])
+		return render_template("analytics.html", journals=all_journals)
 	return redirect("/analytics.html")
 
 
