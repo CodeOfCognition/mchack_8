@@ -62,7 +62,7 @@
 
     <div class="container text-md-left" style="display: flex; justify-content: center; padding-top: 40px;">
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
-        <a href="#" style="text-decoration: none; color: black;">
+        <a href="/Mood/0" style="text-decoration: none; color: black;">
           <img src="{{ url_for('static', filename='img/angry.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Angry
@@ -70,7 +70,7 @@
         </a>
       </div>
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
-        <a href="#" style="text-decoration: none; color: black;">
+        <a href="/Mood/1" style="text-decoration: none; color: black;">
           <img src="{{ url_for('static', filename='img/thinking.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Mixed
@@ -78,7 +78,7 @@
         </a>
       </div>
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
-        <a href="#" style="text-decoration: none; color: black;">
+        <a href="/Mood/2" style="text-decoration: none; color: black;">
           <img src="{{ url_for('static', filename='img/poker-face.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Meh
@@ -86,7 +86,7 @@
         </a>
       </div>
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
-        <a href="#" style="text-decoration: none; color: black;">
+        <a href="/Mood/3" style="text-decoration: none; color: black;">
           <img src="{{ url_for('static', filename='img/laughing.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Laughing
@@ -94,7 +94,7 @@
         </a>
       </div>
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
-        <a href="#" style="text-decoration: none; color: black;">
+        <a href="/Mood/4" style="text-decoration: none; color: black;">
           <img src="{{ url_for('static', filename='img/logo.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Lovely
@@ -116,6 +116,12 @@
     </div>
 
     </div>
+    </div>
+    <div>
+      <form action="/" method="POST">
+      <input type="number" name="content" id="content">
+      <input type="submit" value="Add Mood">
+    </form>
     </div>
 
       <!-- <ul class="nav nav-pills justify-content-center">

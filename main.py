@@ -92,6 +92,11 @@ def moods_get_all():
 	all_moods = [x for x in moods.find()]
 	return all_moods
 
+@app.route("/Mood/<mood_id>", methods=['POST', 'GET'])
+def mood(mood_id):
+	Mood._send_to_mongo(Mood(int(mood_id)))
+	return mood_id #redirect('/')
+
 @app.route("/", methods=['POST', 'GET'])
 def index():
 	if request.method == "GET":
