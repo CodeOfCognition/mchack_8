@@ -127,6 +127,30 @@ def journal_page0():
 		return render_template("journal 0.html")
 	return redirect('/journal0')
 
+@app.route("/journal1", methods=['POST', 'GET'])
+def journal_page1():
+	if request.method == "GET":
+		return render_template("journal1.html")
+	return redirect('/journal1')
+
+@app.route("/journal2", methods=['POST', 'GET'])
+def journal_page2():
+	if request.method == "GET":
+		return render_template("journal2.html")
+	return redirect('/journal2')
+
+@app.route("/journal3", methods=['POST', 'GET'])
+def journal_page3():
+	if request.method == "GET":
+		return render_template("journal3.html")
+	return redirect('/journal3')
+
+@app.route("/journal4", methods=['POST', 'GET'])
+def journal_page4():
+	if request.method == "GET":
+		return render_template("journal4.html")
+	return redirect('/journal4')
+
 @app.route("/journal/<page_id>", methods=['POST', 'GET'])
 def journal_mood_x(page_id):
 	if request.method == "POST":
