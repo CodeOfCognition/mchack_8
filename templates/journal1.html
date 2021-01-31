@@ -81,15 +81,15 @@
                   <a class="btn my-4 font-weight-bold atlas-cta cta-green open-button" onclick="openForm(); toggleText()" style="display: flex;" >Write About It!</a>
                 </div>
                 <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 205px;" >
-                  <a href="./index.html" class="btn my-4 font-weight-bold atlas-cta cta-green" style="display: flex;" >Just Record Mood</a>
+                  <a href="/Mood/1" class="btn my-4 font-weight-bold atlas-cta cta-green" style="display: flex;" >Just Record Mood</a>
                 </div>
               </div> 
     </div>
           <p id="Reminder" style="display: none; text-align: center; font-weight: bold; ">Fill Out Form Below!</p>  
           <!--Pop Up text field here-->
           <div class="form-popup" id="myForm" >
-            <form class="form-container">
-              <textarea class="form-control" id="message" rows="5" placeholder="Sample Text Here" style="background-color: transparent; border-color: black;"></textarea>
+            <form action="/journal/1" method="POST" class="form-container">
+              <textarea name="message" class="form-control" id="message" rows="5" placeholder="Sample Text Here" style="background-color: transparent; border-color: black;"></textarea>
               <div style="padding-left: 44%; padding-top: 1%;">
                 <button type="submit" class="btn">Submit</button>
                 <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
