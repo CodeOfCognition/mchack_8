@@ -50,16 +50,16 @@ class CDC(Enum):
 
 
 class Journal:
-	def __init__(self, entry, upload=True):
+	def __init__(self, entry, mood, upload=True):
 		self.journal = entry
-		#self.mood = mood
+		self.mood = mood
 		if upload:
 			self._send_to_mongo()
 
 	def _send_to_mongo(self):
 		post = {"date": datetime.datetime.utcnow(),
-			"journal": self.journal}
-			#"mood": self.mood.value}
+			"journal": self.journal,
+			"mood": self.mood.value}
 		entries.insert_one(post)
 
 class Worksheet:
@@ -120,6 +120,20 @@ def journal_page():
 	mood = Mood(mood)
 	Journal(entry, mood)
 	return redirect('/journal')
+
+@app.route("/journal0", methods=['POST', 'GET'])
+def journal_page0():
+	if request.method == "GET":
+		return render_template("journal 0.html")
+	return redirect('/journal0')
+
+@app.route("/journal/<page_id>", methods=['POST', 'GET'])
+def journal_mood_x(page_id):
+	if request.method == "POST":
+		entry = request.form['message']
+		mood = Mood(int(page_id))
+		Journal(entry, mood)
+	return redirect('/')
 
 @app.route("/worksheet", methods=['POST', 'GET'])
 def worksheet_page():
