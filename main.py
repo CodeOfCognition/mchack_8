@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 from enum import Enum
 import datetime
@@ -63,11 +63,14 @@ def worksheets_get_all():
 	all_worksheets = [x for x in worksheets.find()]
 	return all_worksheets
 
-@app.route("/")
+@app.route("/", methods=['POST', 'GET'])
 def index():
+	if request.method == "GET":
+		return render_template("index.html")
+	print("name: {}\nemail: {}\nmessage: {}".format(name, email, message))
+	return redirect('/')
 	#journal = Journal("abcdef", Mood.VERY_BAD)
 	#print(journals_get_all())
-	return render_template("index.html")
 
 if __name__ == "__main__":
 	app.run(debug=True)
