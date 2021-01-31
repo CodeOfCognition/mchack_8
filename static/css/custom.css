@@ -54,5 +54,14 @@ padding-bottom:4rem!important}
     background-color: rgb(236, 240, 236) !important; 
 }
 
+  
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    right: 15%;
+    border: 5% solid #f1f1f1;
+    z-index: 9;
+  }
+
 
 
