@@ -146,9 +146,13 @@ def analytics_page():
 		matplotlib.pyplot.figure(figsize=(8, 6))
 		matplotlib.pyplot.plot_date(dates, mood_vals, 'b-')
 		matplotlib.pyplot.yticks([0, 1, 2, 3, 4])
-		matplotlib.pyplot.ylabel("Happiness")
+		matplotlib.pyplot.ylabel("Mood")
 		matplotlib.pyplot.xlabel("Time")
 		matplotlib.pyplot.savefig("./static/mood-graph.png")
+
+		# TODO how will we display this? templates?
+		all_journals = sorted(journals_get_all(), key=lambda j: j['date'])
+		all_worksheets = sorted(worksheets_get_all(), key=lambda w: w['date'])
 		return render_template("analytics.html")
 	return redirect("/analytics.html")
 
