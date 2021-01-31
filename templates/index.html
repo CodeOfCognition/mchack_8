@@ -2,21 +2,119 @@
 <html>
   <head lang="en">
     <meta charset="UTF-8">
-    <title>Flask</title>
+    <title>Mood Diary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
+
+    <link rel="stylesheet" href="./css/custom.css">
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./font/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./css/aos.css">
   </head>
   <body>
-    <div class="container">
-      <h1>Flask</h1>
-      <br>
-      <div id="main"></div>
+    <div class="jumbotron jumbotron-fluid" id="banner">
+    
+    <div class="container text-center text-md-left">
+    <header>
+    <div class="row justify-content-between">
+    <div class="col-2">
+    <img src="img/logo.png" alt="logo">
     </div>
+    <div class="col-6 align-self-center text-right">
+    <a href="#" style="text-decoration: none;">LOG IN</a>
+    </div>
+    </div>
+    </header>
+    <h1 class="display-3 font-weight-bold my-5">
+    How Do You<br>Feel?
+    </h1>
+    <p class="lead my-4">
+    Lorem ipsum dolor sit amet, id nec enim autem oblique, ei dico mentitum duo.
+    <br> Illum iusto laoreet his te. Lorem partiendo mel ex. Ad vitae admodum voluptatum per.
+    </p>
+    <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-green">Get Started</a>
+    </div>
+    <div class="container text-md-left" style="display: flex; justify-content: center">
+      <div style="float: left; width: 40%; padding: 20px; max-height: 150px; max-width: 150px;" >
+        <img src="img/logo.png"/>
+        <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+          happy
+        </div>
+      </div>
+      <div style="float: left; width: 40%; padding: 20px; max-height: 150px; max-width: 150px;" >
+        <img src="img/logo.png"/>
+        <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+          happy
+        </div>
+      </div>
+      <div style="float: left; width: 40%; padding: 20px; max-height: 150px; max-width: 150px;" >
+        <img src="img/logo.png"/>
+        <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+          happy
+        </div>
+      </div>
+      <div style="float: left; width: 40%; padding: 20px; max-height: 150px; max-width: 150px;" >
+        <img src="img/logo.png"/>
+        <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+          happy
+        </div>
+      </div>
+      <div style="float: left; width: 40%; padding: 20px; max-height: 150px; max-width: 150px;" >
+        <img src="img/logo.png"/>
+        <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+          happy
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+      
+
+      
+      
+      <div class="jumbotron jumbotron-fluid" id="contact">
+      <div class="container my-5">
+      <div class="row justify-content-between">
+      <div class="col-md-6">
+      <h2 class="font-weight-bold">Contact A Professional</h2>
+      <p class="my-4">
+      Lorem ipsum dolor sit amet, id nec enim autem oblique
+      <br> augue disputando in vim. Erat fugit sit at, ius lorem.
+      </p>
+      <ul class="list-unstyled">
+      <li>Email : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6704080a1706091e38020a060e0b2704080a">[email&#160;protected]</a></li>
+      <li>Phone : 1111-111-111</li>
+      <li>Address : Lorem ipsum dolor sit amet, id nec enim autem oblique</li>
+      </ul>
+      </div>
+      <div class="col-md-6">
+      <form>
+      <div class="row">
+      <div class="form-group col-md-6">
+      <label for="name">Your Name</label>
+      <input type="name" class="form-control" id="name">
+      </div>
+      <div class="form-group col-md-6">
+      <label for="Email">Your Email</label>
+      <input type="email" class="form-control" id="Email">
+      </div>
+      </div>
+      <div class="form-group">
+      <label for="message">Message</label>
+      <textarea class="form-control" id="message" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn font-weight-bold atlas-cta atlas-cta-wide cta-green my-3">Submit</button>
+      </form>
+      </div>
+      </div>
+      </div>
+      </div>
     <!-- scripts -->
-    <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='bower_components/react/react-dom.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/js/main.js') }}"></script>
   </body>
 </html>
