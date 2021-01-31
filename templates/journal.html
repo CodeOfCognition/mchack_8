@@ -7,15 +7,15 @@
     <!-- styles -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     
-    <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" sizes="32x32" type="image/png">
 
-    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/custom.css') }}">
 
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/bootstrap.min.css') }}">
 
-    <link rel="stylesheet" href="./font/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./font/css/font-awesome.min.css') }}">
 
-    <link rel="stylesheet" href="./css/aos.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/aos.css') }}">
 
     <script>
       function show(elementID) {
@@ -43,7 +43,7 @@
         <header>
           <div class="row justify-content-between">
             <div class="col-2">
-            <img src="img/logo.png" alt="logo">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
             </div>
             <div class="col-6 align-self-center text-right">
             <a href="#" style="text-decoration: none;">LOG IN</a>
@@ -57,7 +57,62 @@
           Start by selecting one of the following moods and fill in the rest! 
         </p>
       </div>
+    <div class="container text-md-left" style="display: flex; justify-content: center; padding-top: 40px;">
+      <div style="float: left; width: 20%; padding: 5%; max-height: 20%; max-width: 20%;" >
+        <a href="#" style="text-decoration: none; color: black;">
+          <img src="{{ url_for('static', filename='img/angry.png') }}"/>
+          <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+            Angry
+          </div>
+        </a>
+      </div>
+      <div style="float: left; width: 20%; padding: 5%; max-height: 20%; max-width: 20%;" >
+        <a href="#" style="text-decoration: none; color: black;">
+          <img src="{{ url_for('static', filename='img/thinking.png') }}"/>
+          <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+            Mixed
+          </div>
+        </a>
+      </div>
+      <div style="float: left; width: 20%; padding: 5%; max-height: 20%; max-width: 20%;" >
+        <a href="#" style="text-decoration: none; color: black;">
+          <img src="{{ url_for('static', filename='img/poker-face.png') }}"/>
+          <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+            Meh
+          </div>
+        </a>
+      </div>
+      <div style="float: left; width: 20%; padding: 5%; max-height: 20%; max-width: 20%;" >
+        <a href="#" style="text-decoration: none; color: black;">
+          <img src="{{ url_for('static', filename='img/laughing.png') }}"/>
+          <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+            Laughing
+          </div>
+        </a>
+      </div>
+      <div style="float: left; width: 20%; padding: 5%; max-height: 20%; max-width: 20%;" >
+        <a href="#" style="text-decoration: none; color: black;">
+          <img src="{{ url_for('static', filename='img/logo.png') }}"/>
+          <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+            Lovely
+          </div>
+        </a>
+      </div>
+    </div>
 
+      <!--FORMS START HERE-->
+
+    <div class="col-md-6" style="padding-top: 3%; display: block; margin-left: auto; margin-right: auto;">
+      <form>
+        
+        <div class="form-group">
+          <p class="lead font-weight-bold my-4 text-center" >
+            Journal Entry
+          </p>
+          <textarea class="form-control" id="message" rows="5" placeholder="Enter Journal" style="background-color: transparent; border-color: black;"></textarea>
+          <small class="form-text text-muted">
+            Some inspirational quote here maybe or some prompt.
+          </small>
     <div data-aos="fade" data-aos-duration="800">
       <div class="container text-md-left" style="display: flex; justify-content: center; padding-top: 40px;">
         <div style="float: left; width: 20%; padding: 5%; max-height: 20%; max-width: 20%;" >
