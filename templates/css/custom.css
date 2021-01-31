@@ -17,9 +17,17 @@ transform:translateY(-5px)}
 .cta-blue:hover{color:#fff;background:#121a2e}
 .cta-ghost{border:2px solid #192440!important;color:#192440}
 .cta-ghost:hover{color:#fff;background:#121a2e}
+
+/* landing page (record mood) banner section css*/
 #banner{background-size:cover}
 #banner header{overflow:hidden}
-#banner header img{max-width:80px}
+#banner header img{max-width:60px}
+
+/* second page (journal entry) banner section css*/
+#banner2{background-size:cover}
+#banner2 header{overflow:hidden}
+#banner2 header img{max-width:60px}
+
 .feature img{width:100%;max-width:480px}
 #feature-first{background:linear-gradient(168deg,#ffffff 55%,#a0e480 0)}
 #feature-last{background:#000000}
