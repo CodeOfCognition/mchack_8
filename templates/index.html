@@ -7,15 +7,17 @@
     <!-- styles -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 
-    <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
+    
 
-    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" sizes="32x32" type="image/png">
 
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/custom.css') }}">
 
-    <link rel="stylesheet" href="./font/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/bootstrap.min.css') }}">
 
-    <link rel="stylesheet" href="./css/aos.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./font/css/font-awesome.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/aos.css') }}">
 
     <script>
       function show(elementID) {
@@ -43,7 +45,7 @@
         <header>
           <div class="row justify-content-between">
             <div class="col-2">
-            <img src="img/logo.png" alt="logo">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
             </div>
             <div class="col-6 align-self-center text-right">
             <a href="#" style="text-decoration: none;">LOG IN</a>
@@ -61,7 +63,7 @@
     <div class="container text-md-left" style="display: flex; justify-content: center; padding-top: 40px;">
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
         <a href="#" style="text-decoration: none; color: black;">
-          <img src="img/angry.png"/>
+          <img src="{{ url_for('static', filename='img/angry.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Angry
           </div>
@@ -69,7 +71,7 @@
       </div>
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
         <a href="#" style="text-decoration: none; color: black;">
-          <img src="img/thinking.png"/>
+          <img src="{{ url_for('static', filename='img/thinking.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Mixed
           </div>
@@ -77,7 +79,7 @@
       </div>
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
         <a href="#" style="text-decoration: none; color: black;">
-          <img src="img/poker-face.png"/>
+          <img src="{{ url_for('static', filename='img/poker-face.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Meh
           </div>
@@ -85,7 +87,7 @@
       </div>
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
         <a href="#" style="text-decoration: none; color: black;">
-          <img src="img/laughing.png"/>
+          <img src="{{ url_for('static', filename='img/laughing.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Laughing
           </div>
@@ -93,7 +95,7 @@
       </div>
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
         <a href="#" style="text-decoration: none; color: black;">
-          <img src="img/logo.png"/>
+          <img src="{{ url_for('static', filename='img/logo.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Lovely
           </div>
