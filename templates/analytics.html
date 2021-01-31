@@ -60,6 +60,8 @@
 
       <!--FORMS START HERE-->
 
+      <center><img src="{{ url_for('static', filename='img/under_construction.png') }}" class="center" width="80%"></center>
+
       <img src="{{ url_for('static', filename='mood-graph.png') }}" alt="logo">
       {% for j in journals %}
       <p class="my-4"> {{ j['date'] }} </p>
