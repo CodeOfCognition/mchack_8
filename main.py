@@ -121,6 +121,12 @@ def journal_page():
 	Journal(entry, mood)
 	return redirect('/journal')
 
+@app.route("/analyze", methods=['POST', 'GET'])
+def analitty():
+	if request.method == "GET":
+		return render_template("analytics.html")
+	return redirect('/analyze')
+
 @app.route("/journal0", methods=['POST', 'GET'])
 def journal_page0():
 	if request.method == "GET":
