@@ -16,31 +16,48 @@
     <link rel="stylesheet" href="./font/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="./css/aos.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+
+    <script>
+      function show(elementID) {
+        var ele = document.getElementById(elementID);
+        if (!ele) {
+            alert("no such element");
+            return;
+        }
+        var pages = document.getElementsByClassName('page');
+        for(var i = 0; i < pages.length; i++) {
+            pages[i].style.display = 'none';
+      }
+    ele.style.display = 'block';
+}
+    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
-  <body>
-    <div class="jumbotron jumbotron-fluid" id="banner">
 
-    <div class="container text-center text-md-left">
-    <header>
-    <div class="row justify-content-between">
-    <div class="col-2">
-    <img src="img/logo.png" alt="logo">
-    </div>
-    <div class="col-6 align-self-center text-right">
-    <a href="#" style="text-decoration: none;">LOG IN</a>
-    </div>
-    </div>
-    </header>
-    <h1 class="display-3 font-weight-bold my-5 text-center" style="padding-top: 20px;">
-    How Do You Feel?
-    </h1>
-    <p class="lead my-4 text-center">
-    Record your mood and your day. Learn about your emotions.
-    </p>
-    </div>
+  <body>
+    <div class="jumbotron jumbotron-fluid" id="banner" style="">
+    
+      <div class="container text-center text-md-left">
+        <header>
+          <div class="row justify-content-between">
+            <div class="col-2">
+            <img src="img/logo.png" alt="logo">
+            </div>
+            <div class="col-6 align-self-center text-right">
+            <a href="#" style="text-decoration: none;">LOG IN</a>
+            </div>
+          </div>
+        </header>
+        <h1 class="display-3 font-weight-bold my-5 text-center" style="padding-top: 20px;">
+          How Do You Feel?
+        </h1>
+        <p class="lead my-4 text-center">
+          Record your mood and your day. Learn about your emotions. 
+        </p>
+      </div>
+
     <div class="container text-md-left" style="display: flex; justify-content: center; padding-top: 40px;">
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
         <a href="#" style="text-decoration: none; color: black;">
@@ -85,16 +102,33 @@
     </div>
 
     <div class="container text-md-left" style="display: flex; justify-content: center; padding-top: 40px;">
-      <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 190px;" >
-        <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-green" style="display: flex;" >Get Started</a>
+      <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 205px;" >
+        <a href="./journal.html" class="btn my-4 font-weight-bold atlas-cta cta-green" style="display: flex;" >Mood Journal</a>
       </div>
-      <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 190px;" >
-        <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-green" style="display: flex;" >Get Started</a>
+      <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 205px;" >
+        <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-green" style="display: flex;" >Record Mood</a>
       </div>
-      <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 190px;" >
-        <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-green" style="display: flex;" >Get Started</a>
+      <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 205px;" >
+        <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-green" style="display: flex;" >Analyze Stats</a>
       </div>
     </div>
+
+    </div>
+    </div>
+
+      <!-- <ul class="nav nav-pills justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="pill" href="#">Mood Diary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="#">Entries</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="#">Stats</a>
+        </li>
+      </ul> -->
+    
+  
       <div class="jumbotron jumbotron-fluid" id="contact">
       <div class="container my-5">
       <div class="row justify-content-between">
@@ -132,6 +166,5 @@
       </div>
       </div>
       </div>
-    <!-- scripts -->
   </body>
 </html>
