@@ -67,6 +67,9 @@ def worksheets_get_all():
 def index():
 	if request.method == "GET":
 		return render_template("index.html")
+	name = request.form['name']
+	email = request.form['email']
+	message = request.form['message']
 	print("name: {}\nemail: {}\nmessage: {}".format(name, email, message))
 	return redirect('/')
 	#journal = Journal("abcdef", Mood.VERY_BAD)
