@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 from enum import Enum
 import datetime
+import matplotlib.pyplot
+import matplotlib.dates
 
 app = Flask(__name__)
 
@@ -92,6 +94,11 @@ def moods_get_all():
 	all_moods = [x for x in moods.find()]
 	return all_moods
 
+@app.route("/Mood/<mood_id>", methods=['POST', 'GET'])
+def mood(mood_id):
+	Mood._send_to_mongo(Mood(int(mood_id)))
+	return mood_id #redirect('/')
+
 @app.route("/", methods=['POST', 'GET'])
 def index():
 	if request.method == "GET":
@@ -128,6 +135,22 @@ def worksheet_page():
 	cdc = CDC(cdc)
 	Worksheet(entry, mood, cdc, entry1, entry2)
 	return redirect('/worksheet')
+
+@app.route("/analytics", methods=['POST', 'GET'])
+def analytics_page():
+	if request.method == "GET":
+		all_moods = moods_get_all()
+		times = [x['date'] for x in all_moods]
+		mood_vals = [x['mood'] for x in all_moods]
+		dates = matplotlib.dates.date2num(times)
+		matplotlib.pyplot.figure(figsize=(8, 6))
+		matplotlib.pyplot.plot_date(dates, mood_vals, 'b-')
+		matplotlib.pyplot.yticks([0, 1, 2, 3, 4])
+		matplotlib.pyplot.ylabel("Happiness")
+		matplotlib.pyplot.xlabel("Time")
+		matplotlib.pyplot.savefig("./static/mood-graph.png")
+		return render_template("analytics.html")
+	return redirect("/analytics.html")
 
 
 if __name__ == "__main__":
