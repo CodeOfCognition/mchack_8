@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>Mood Diary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
+
+    <link rel="stylesheet" href="./css/custom.css">
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./font/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./css/aos.css">
+
+    <script>
+      function show(elementID) {
+        var ele = document.getElementById(elementID);
+        if (!ele) {
+            alert("no such element");
+            return;
+        }
+        var pages = document.getElementsByClassName('page');
+        for(var i = 0; i < pages.length; i++) {
+            pages[i].style.display = 'none';
+      }
+    ele.style.display = 'block';
+}
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="jumbotron jumbotron-fluid" id="banner" style="">
+    
+      <div class="container text-center text-md-left">
+        <header>
+          <div class="row justify-content-between">
+            <div class="col-2">
+            <img src="img/logo.png" alt="logo">
+            </div>
+            <div class="col-6 align-self-center text-right">
+            <a href="#" style="text-decoration: none;">LOG IN</a>
+            </div>
+          </div>
+        </header>
+        <h1 class="font-weight-bold my-4 text-center" style="padding-top: 20px;">
+          Record Your Mood And Learn About Yourself
+        </h1>
+        <p class="lead my-4 text-center">
+          Start by selecting one of the following moods and fill in the rest! 
+        </p>
+      </div>
+
+    <div class="container text-md-left" style="display: flex; justify-content: center; padding-top: 40px;">
+      <div style="float: left; width: 20%; padding: 5%; max-height: 20%; max-width: 20%;" >
+        <a href="#" style="text-decoration: none; color: black;">
+          <img src="img/angry.png"/>
+          <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+            Angry
+          </div>
+        </a>
+      </div>
+      <div style="float: left; width: 20%; padding: 5%; max-height: 20%; max-width: 20%;" >
+        <a href="#" style="text-decoration: none; color: black;">
+          <img src="img/thinking.png"/>
+          <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+            Mixed
+          </div>
+        </a>
+      </div>
+      <div style="float: left; width: 20%; padding: 5%; max-height: 20%; max-width: 20%;" >
+        <a href="#" style="text-decoration: none; color: black;">
+          <img src="img/poker-face.png"/>
+          <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+            Meh
+          </div>
+        </a>
+      </div>
+      <div style="float: left; width: 20%; padding: 5%; max-height: 20%; max-width: 20%;" >
+        <a href="#" style="text-decoration: none; color: black;">
+          <img src="img/laughing.png"/>
+          <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+            Laughing
+          </div>
+        </a>
+      </div>
+      <div style="float: left; width: 20%; padding: 5%; max-height: 20%; max-width: 20%;" >
+        <a href="#" style="text-decoration: none; color: black;">
+          <img src="img/logo.png"/>
+          <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+            Lovely
+          </div>
+        </a>
+      </div>
+    </div>
+
+      <!--FORMS START HERE-->
+
+    <div class="col-md-6" style="padding-top: 3%; display: block; margin-left: auto; margin-right: auto;">
+      <form>
+        
+        <div class="form-group">
+          <p class="lead font-weight-bold my-4 text-center" >
+            Journal Entry
+          </p>
+          <textarea class="form-control" id="message" rows="5" placeholder="Enter Journal" style="background-color: transparent; border-color: black;"></textarea>
+          <small class="form-text text-muted">
+            Some inspirational quote here maybe or some prompt.
+          </small>
+        </div>
+
+        <!--COGNITIVE DISTORTIONS SECTION-->
+        <p class="lead font-weight-bold my-4 text-center" style="padding-top: 10%;">
+          Cognitive Distortions 
+        </p>
+        <row> 
+          <col>
+            <div style="float: left; width: 50%; padding: 20px; max-height: 20%; max-width: 205px;text-align: center;" >
+              <a class="btn my-4 font-weight-bold atlas-cta select-green"  >
+                  Blaming
+              </a>
+            </div>
+          </col>
+          <col>
+            <div style="float: left; width: 50%; padding: 20px; max-height: 20%; max-width: 205px;text-align: center;" >
+              <a class="btn my-4 font-weight-bold atlas-cta select-green"  >
+                Fallacy of Change
+              </a>
+            </div>
+          </col>
+          <col>
+            <div style="float: left; width: 50%; padding: 20px; max-height: 20%; max-width: 205px; text-align: center;" >
+              <a class="btn my-4 font-weight-bold atlas-cta select-green" >
+                Personalization
+              </a>
+            </div>
+          </col>
+        </row>
+        
+        <!--CHALLENGE YOUR THOUGHTS SECTION-->
+        <p class="lead font-weight-bold my-4 text-center" style="padding-top: 30%;">
+          Challenge Your Negative Thoughts
+        </p>
+
+        <textarea class="form-control" id="message" rows="5" placeholder="Sample text here" style="background-color: transparent; border-color: black;"></textarea>
+
+        <!--ALTERNATIVE THOUGHTS SECTION-->
+        <p class="lead font-weight-bold my-4 text-center" style="padding-top: 10%;">
+          Alternative Thoughts
+        </p>
+
+        <textarea class="form-control" id="message" rows="5" placeholder="Sample Text Here" style="background-color: transparent; border-color: black;"></textarea>
+        
+        <div style="padding-top: 5%;" >
+          <a href="./index.html" class="btn font-weight-bold atlas-cta cta-green my-3 " >Cancel</a>
+          <button type="submit" class="btn font-weight-bold atlas-cta cta-green my-3" >Submit</button>
+        </div>
+      </form>
+    </div>
+    
+
+    <!--CONTACT SECTION-->
+
+      <div class="jumbotron jumbotron-fluid" id="contact">
+      <div class="container my-5">
+      <div class="row justify-content-between">
+      <div class="col-md-6">
+      <h2 class="font-weight-bold">Contact A Professional</h2>
+      <p class="my-4">
+      Lorem ipsum dolor sit amet, id nec enim autem oblique
+      <br> augue disputando in vim. Erat fugit sit at, ius lorem.
+      </p>
+      <ul class="list-unstyled">
+      <li>Email : email here</li>
+      <li>Phone : 1111-111-111</li>
+      <li>Address : Lorem ipsum dolor sit amet, id nec enim autem oblique</li>
+      </ul>
+      </div>
+      <div class="col-md-6">
+        <form>
+          <div class="row">
+          <div class="form-group col-md-6">
+          <label for="name">Your Name</label>
+          <input type="name" class="form-control" id="name">
+          </div>
+          <div class="form-group col-md-6">
+          <label for="Email">Your Email</label>
+          <input type="email" class="form-control" id="Email">
+          </div>
+          </div>
+          <div class="form-group">
+          <label for="message">Message</label>
+          <textarea class="form-control" id="message" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn font-weight-bold atlas-cta atlas-cta-wide cta-green my-3">Submit</button>
+        </form>
+      </div>
+      </div>
+      </div>
+      </div>
+  </body>
+</html>
