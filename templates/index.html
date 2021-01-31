@@ -52,17 +52,19 @@
             </div>
           </div>
         </header>
-        <h1 class="display-3 font-weight-bold my-5 text-center" style="padding-top: 20px;">
-          How Do You Feel?
-        </h1>
-        <p class="lead my-4 text-center">
-          Record your mood and your day. Learn about your emotions. 
-        </p>
+        <div data-aos="fade-down" data-aos-duration="500">
+          <h1 class="display-3 font-weight-bold my-5 text-center" style="padding-top: 20px;">
+            How Do You Feel?
+          </h1>
+          <p class="lead my-4 text-center">
+            Record your mood and your day. Learn about your emotions. 
+          </p>
+        </div>
       </div>
 
     <div class="container text-md-left" style="display: flex; justify-content: center; padding-top: 40px;">
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
-        <a href="#" style="text-decoration: none; color: black;">
+        <a href="/Mood/0" style="text-decoration: none; color: black;">
           <img src="{{ url_for('static', filename='img/angry.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Angry
@@ -70,7 +72,7 @@
         </a>
       </div>
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
-        <a href="#" style="text-decoration: none; color: black;">
+        <a href="/Mood/1" style="text-decoration: none; color: black;">
           <img src="{{ url_for('static', filename='img/thinking.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Mixed
@@ -78,7 +80,7 @@
         </a>
       </div>
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
-        <a href="#" style="text-decoration: none; color: black;">
+        <a href="/Mood/2" style="text-decoration: none; color: black;">
           <img src="{{ url_for('static', filename='img/poker-face.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Meh
@@ -86,7 +88,7 @@
         </a>
       </div>
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
-        <a href="#" style="text-decoration: none; color: black;">
+        <a href="/Mood/3" style="text-decoration: none; color: black;">
           <img src="{{ url_for('static', filename='img/laughing.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Laughing
@@ -94,7 +96,7 @@
         </a>
       </div>
       <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 220px;" >
-        <a href="#" style="text-decoration: none; color: black;">
+        <a href="/Mood/4" style="text-decoration: none; color: black;">
           <img src="{{ url_for('static', filename='img/logo.png') }}"/>
           <div style="text-align: center; font-family:verdana; padding-top: 10px;">
             Lovely
@@ -117,6 +119,7 @@
 
     </div>
     </div>
+    
 
       <!-- <ul class="nav nav-pills justify-content-center">
         <li class="nav-item">
@@ -132,7 +135,7 @@
     
   
       <div class="jumbotron jumbotron-fluid" id="contact">
-      <div class="container my-5">
+      <div data-aos="fade-up" data-aos-duration="500" class="container my-5">
       <div class="row justify-content-between">
       <div class="col-md-6">
       <h2 class="font-weight-bold">Contact A Professional</h2>
@@ -168,5 +171,11 @@
       </div>
       </div>
       </div>
+      <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+      <script>$( document ).ready(function() {
+        AOS.init({
+        easing: 'ease-in-quad',
+        });
+        }); </script>
   </body>
 </html>
