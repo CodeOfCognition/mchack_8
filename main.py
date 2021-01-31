@@ -18,6 +18,7 @@ class Mood(Enum):
 	VERY_GOOD = 4
 
 class CDC(Enum):
+	# TODO replace me with actual CDC options
 	CDC_OPT_0 = 0
 	CDC_OPT_1 = 1
 	CDC_OPT_2 = 2
@@ -41,6 +42,7 @@ class Worksheet:
 		self.mood = mood
 		self.cdc = cdc
 		self.entry = entry
+		# TODO rename entry1, entry2
 		self.entry1 = entry1
 		self.entry2 = entry2
 		if upload:
@@ -74,6 +76,32 @@ def index():
 	return redirect('/')
 	#journal = Journal("abcdef", Mood.VERY_BAD)
 	#print(journals_get_all())
+
+@app.route("/journal", methods=['POST', 'GET'])
+def journal_page():
+	if request.method == "GET":
+		return render_template("journal.html")
+	mood = int(request.form['mood'])
+	entry = request.form['journal']
+	mood = Mood(mood)
+	Journal(entry, mood)
+	return redirect('/journal')
+
+@app.route("/worksheet", methods=['POST', 'GET'])
+def worksheet_page():
+	if request.method == "GET":
+		return render_template("journal.html")
+	mood = int(request.form['mood'])
+	entry = request.form['journal']
+	# TODO rename entry1, entry2
+	entry1 = request.form['entry1']
+	entry2 = request.form['entry2']
+	cdc = int(request.form['cdc'])
+	mood = Mood(mood)
+	cdc = CDC(cdc)
+	Worksheet(entry, mood, cdc, entry1, entry2)
+	return redirect('/worksheet')
+
 
 if __name__ == "__main__":
 	app.run(debug=True)
