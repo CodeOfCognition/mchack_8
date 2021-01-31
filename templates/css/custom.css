@@ -11,7 +11,7 @@ transition:.3s ease-in-out!important}
     
 transform:translateY(-5px)}
 .atlas-cta-wide{width:100%}
-.cta-green{background:#a0e480;color:#192440}
+.cta-green{background:#aad695;color:#192440}
 .cta-green:hover{color:#fff;background:#a0e480}
 .cta-blue{background:#192440;color:#fff}
 .cta-blue:hover{color:#fff;background:#121a2e}
@@ -37,4 +37,13 @@ padding-bottom:4rem!important}
 #copyright #social-media a i{color:#192440;font-size:1.2rem;line-height:40px}
 #copyright #social-media a:hover{background:#00ffad}
 #copyright #social-media a:hover i{color:#fff}@media(max-width:575px){#banner h1{font-size:3.6rem}}
+
+.nav-pills > li > a.active {
+    background-color: #7cbb8c!important;
+}
+
+.nav-pills {
+    background-color: rgb(236, 240, 236) !important; 
+}
+
 
