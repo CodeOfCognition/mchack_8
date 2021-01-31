@@ -5,7 +5,7 @@ import datetime
 
 app = Flask(__name__)
 
-mongo_client = MongoClient()
+mongo_client = MongoClient("mongodb+srv://admin:admin@cluster0.y1e6w.mongodb.net/mchacks?retryWrites=true&w=majority")
 db = mongo_client.db
 entries = db.entries
 worksheets = db.worksheets
