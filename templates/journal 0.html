@@ -36,6 +36,14 @@
       function closeForm() {
         document.getElementById("myForm").style.display = "none";
       }
+      function toggleText() {
+        var text = document.getElementById("Reminder");
+        if (text.style.display === "none") {
+          text.style.display = "block";
+        } else {
+          text.style.display = "none";
+        }
+      }
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -66,36 +74,36 @@
         </div> -->
       </div>
 
-    <div class="container text-md-left" style="display: flex; padding-top: 40px;">
-      <div style="float: left; width: 70%; padding: 20px;" >
+    <div data-aos="fade-right" data-aos-duration="500" class="container text-md-left" style="display: flex; padding-top: 40px;">
+      <div style="float: left; width: 91%; padding: 2%;" >
         <a href="#" style="text-decoration: none; color: black;">
           <img src="../static/img/angry.png"/>
-          <div style="text-align: center; font-family:verdana; padding-top: 10px;">
+          <div class= "font-weight-bold" style="text-align: center; font-family:verdana; padding-top: 5%;">
             Angry
           </div>
         </a>
       </div>
           <!--Option Buttons Here-->
-              <div class="container text-md-left" style="display: flex; justify-content: center; padding-top: 40px;">
+              <div class="container text-md-left" style="display: flex; justify-content: center; padding-top: 18%">
                 <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 205px;" >
-                  <a class="btn my-4 font-weight-bold atlas-cta cta-green open-button" onclick="openForm()" style="display: flex;" >Write About It!</a>
+                  <a class="btn my-4 font-weight-bold atlas-cta cta-green open-button" onclick="openForm(); toggleText()" style="display: flex;" >Write About It!</a>
                 </div>
                 <div style="float: left; width: 40%; padding: 20px; max-height: 220px; max-width: 205px;" >
                   <a href="./index.html" class="btn my-4 font-weight-bold atlas-cta cta-green" style="display: flex;" >Just Record Mood</a>
                 </div>
-              </div>
-
-              <!--Pop Up text field here-->
-              <div class="form-popup" id="myForm">
-                <form class="form-container">
-                  <textarea class="form-control" id="message" rows="5" placeholder="Sample Text Here" style="background-color: transparent; border-color: black;"></textarea>
-              
-                  <button type="submit" class="btn">Login</button>
-                  <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
-                </form>
-              </div>
+              </div> 
     </div>
-
+          <p id="Reminder" style="display: none; text-align: center; font-weight: bold; ">Fill Out Form Below!</p>  
+          <!--Pop Up text field here-->
+          <div class="form-popup" id="myForm" >
+            <form class="form-container">
+              <textarea class="form-control" id="message" rows="5" placeholder="Sample Text Here" style="background-color: transparent; border-color: black;"></textarea>
+              <div style="padding-left: 44%; padding-top: 1%;">
+                <button type="submit" class="btn">Submit</button>
+                <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+              </div>
+            </form>
+          </div>
 
 
     </div>
