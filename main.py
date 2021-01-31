@@ -146,10 +146,16 @@ def analytics_page():
 		matplotlib.pyplot.figure(figsize=(8, 6))
 		matplotlib.pyplot.plot_date(dates, mood_vals, 'b-')
 		matplotlib.pyplot.yticks([0, 1, 2, 3, 4])
-		matplotlib.pyplot.ylabel("Happiness")
+		matplotlib.pyplot.ylabel("Mood")
 		matplotlib.pyplot.xlabel("Time")
 		matplotlib.pyplot.savefig("./static/mood-graph.png")
-		return render_template("analytics.html")
+
+		all_journals = sorted(journals_get_all(), key=lambda j: j['date'], reverse=True)
+		for e in all_journals:
+			e['date'] = e['date'].strftime("%c")
+		# display worksheets?
+		#all_worksheets = sorted(worksheets_get_all(), key=lambda w: w['date'])
+		return render_template("analytics.html", journals=all_journals)
 	return redirect("/analytics.html")
 
 

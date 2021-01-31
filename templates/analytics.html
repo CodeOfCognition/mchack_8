@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>Mood Diary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" sizes="32x32" type="image/png">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/custom.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='./font/css/font-awesome.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/aos.css') }}">
+
+    <script>
+      function show(elementID) {
+        var ele = document.getElementById(elementID);
+        if (!ele) {
+            alert("no such element");
+            return;
+        }
+        var pages = document.getElementsByClassName('page');
+        for(var i = 0; i < pages.length; i++) {
+            pages[i].style.display = 'none';
+      }
+    ele.style.display = 'block';
+}
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="jumbotron jumbotron-fluid" id="banner" style="">
+
+      <div class="container text-center text-md-left">
+        <header>
+          <div class="row justify-content-between">
+            <div class="col-2">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
+            </div>
+            <div class="col-6 align-self-center text-right">
+            <a href="#" style="text-decoration: none;">LOG IN</a>
+            </div>
+          </div>
+        </header>
+        <h1 class="font-weight-bold my-4 text-center" style="padding-top: 20px;">
+          Some statistics about yourself
+        </h1>
+        <p class="lead my-4 text-center">
+          todo subtext
+        </p>
+      </div>
+
+      <!--FORMS START HERE-->
+
+      <img src="{{ url_for('static', filename='mood-graph.png') }}" alt="logo">
+      {% for j in journals %}
+      <p class="my-4"> {{ j['date'] }} </p>
+      <p class="my-4"> {{ j['journal'] }} </p>
+      {% endfor %}
+
+
+    <!--CONTACT SECTION-->
+
+      <div class="jumbotron jumbotron-fluid" id="contact">
+      <div class="container my-5">
+      <div class="row justify-content-between">
+      <div class="col-md-6">
+      <h2 class="font-weight-bold">Contact A Professional</h2>
+      <p class="my-4">
+      Lorem ipsum dolor sit amet, id nec enim autem oblique
+      <br> augue disputando in vim. Erat fugit sit at, ius lorem.
+      </p>
+      <ul class="list-unstyled">
+      <li>Email : email here</li>
+      <li>Phone : 1111-111-111</li>
+      <li>Address : Lorem ipsum dolor sit amet, id nec enim autem oblique</li>
+      </ul>
+      </div>
+      <div class="col-md-6">
+        <form>
+          <div class="row">
+          <div class="form-group col-md-6">
+          <label for="name">Your Name</label>
+          <input type="name" class="form-control" id="name">
+          </div>
+          <div class="form-group col-md-6">
+          <label for="Email">Your Email</label>
+          <input type="email" class="form-control" id="Email">
+          </div>
+          </div>
+          <div class="form-group">
+          <label for="message">Message</label>
+          <textarea class="form-control" id="message" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn font-weight-bold atlas-cta atlas-cta-wide cta-green my-3">Submit</button>
+        </form>
+      </div>
+      </div>
+      </div>
+      </div>
+      <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+      <script>$( document ).ready(function() {
+        AOS.init({
+        easing: 'ease-in-quad',
+        });
+        }); </script>
+  </body>
+</html>
